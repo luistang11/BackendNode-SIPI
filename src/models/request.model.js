@@ -3,14 +3,21 @@ import mongooseDelete from "mongoose-delete";
 
 const schema = new mongoose.Schema(
     {
-      codigoComputadora: {
-        type: Number,
-        required: true,
-      },
       programas:{
         type: Array,
       },
-      
+      fecha:{
+        type: Date,
+      },
+      cantidad: {
+        type: Number,
+      },
+      materia:{
+        type: String,
+      },
+      descripcion:{
+        type: String,
+      }
     },
     { timestamps: true }
   );
