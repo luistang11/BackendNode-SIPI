@@ -1,4 +1,5 @@
 import { Router } from "express";
+import * as RequestsController from "../controllers/request.controller";
 
 const router=Router();
 
@@ -9,7 +10,7 @@ const router=Router();
  * 
 */
 
-router.get('/')
+router.get('/',RequestsController.getProducts)
 
 
 
