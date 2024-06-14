@@ -7,6 +7,10 @@ const schema = new mongoose.Schema(
         type: Number,
         required: true,
       },
+      programas:{
+        type: Array,
+      },
+      
     },
     { timestamps: true }
   );
