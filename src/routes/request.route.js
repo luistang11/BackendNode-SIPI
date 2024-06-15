@@ -1,5 +1,5 @@
 import { Router } from "express";
-import * as RequestsController from "../controllers/request.controller";
+import * as RequestsController from "../controllers/request.controller.js";
 
 const router=Router();
 
@@ -17,7 +17,8 @@ router.get('/',RequestsController.getProducts)
 
 
 router.get('/:idSolicitud')
-router.post('/')
+router.post('/', RequestsController.createRequests)
+
 router.put('/:idSolicitud')
 router.delete('/:idSolicitud')
 

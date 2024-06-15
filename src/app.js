@@ -1,9 +1,7 @@
+import dotenv from "dotenv";
 import express from "express";
 
-
-import "./config/db.js";
-import dotenv from "dotenv";
-dotenv.config({path:'../.env'});
+dotenv.config({path:'./.env'});
 
 import requestRouter from "./routes/request.route.js"
 

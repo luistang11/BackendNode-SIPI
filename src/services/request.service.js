@@ -1,11 +1,17 @@
-import {Request} from '../models/request.model'
+import * as RequestRepository from '../repository/request.model.js'
 
-
-export async function getRequests(){
+export function getRequests() {
     try {
-        const request= await Request.find().lean();
-        return request
+        return RequestRepository.getRequestRepo();
     } catch (error) {
         throw new Error(error.message)
+    }
+}
+
+export function createRequest(request) {
+    try {
+        RequestRepository.createRequestRepo(request);
+    } catch (error) {
+        console.log(error);
     }
 }
