@@ -15,3 +15,12 @@ export function createRequest(request) {
         console.log(error);
     }
 }
+
+export function deleteRequest (id)  {
+    try {
+         RequestRepository.deleteRequestRepo(id)
+    }catch (error) {
+        console.log(error);
+    }
+}
+

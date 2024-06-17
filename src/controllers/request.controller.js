@@ -28,3 +28,15 @@ export async function createRequests(req, res) {
     res.status(500).send("Hubo un error al crear la solicitud.")
   }
 }
+
+
+export async function deleteRequest (req, res)  {
+  try {
+      await RequestServices.deleteRequest(req.params.id)
+      res.status(200).json("La solicitud se eliminó con éxito");
+  } catch (error) {
+      console.log(error);
+      res.status(500).send("Hubo un error al eliminar la solicitud.")
+  }
+}
+
