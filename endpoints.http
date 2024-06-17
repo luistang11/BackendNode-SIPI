@@ -1,0 +1,32 @@
+### Create Request
+POST http://localhost:8081/solicitudes
+Content-Type: application/json
+
+{
+    "programas": ["VISIO","GIT","NODE JS","EXPRESS"],
+    "fecha": "2024-06-19",
+    "cantidad": 10,
+    "materia": "Frontend",
+    "descripcion": "Prueba de post 4"
+}
+
+### Get Requests
+GET http://localhost:8081/solicitudes
+
+### Get Request by Id
+GET http://localhost:8081/solicitudes/6670983ee27baba0bae9479d
+
+### Update Request by Id
+PUT http://localhost:8081/solicitudes/6670983ee27baba0bae9479d
+Content-Type: application/json
+
+{
+    "programas": ["ANGULAR","BOOSTRAP"],
+    "fecha": "2024-06-19",
+    "cantidad": 20,
+    "materia": "Backend",
+    "descripcion": "Prueba de edit"
+}
+
+### Delete Request by Id
+DELETE http://localhost:8081/solicitudes/6670983ee27baba0bae9479d
