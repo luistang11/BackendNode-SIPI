@@ -2,9 +2,9 @@ import * as RequestServices from '../services/request.service.js'
 import { STATUS } from '../constants/constants.js'
 
 
-export async function getProducts(req, res) {
+export async function getRequests(req, res) {
   try {
-    const response = await RequestServices.getProducts();
+    const response = await RequestServices.getRequests();
     res.json({
       products: response,
       status: STATUS.SUCCESS,

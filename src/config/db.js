@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-let conexion= "mongodb+srv://admin:ssHReUjcZM7I0e9J@sipidatabase.6qxipvo.mongodb.net"
 
 dotenv.config({path:'./.env'});
 
