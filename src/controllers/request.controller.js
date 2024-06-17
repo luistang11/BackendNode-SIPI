@@ -32,7 +32,7 @@ export async function createRequests(req, res) {
 
 export async function deleteRequest (req, res)  {
   try {
-      await RequestServices.deleteRequest(req.params.id)
+      await RequestServices.deleteRequest(req.params.idSolicitud)
       res.status(200).json("La solicitud se eliminó con éxito");
   } catch (error) {
       console.log(error);

@@ -40,7 +40,7 @@ router.put('/:idSolicitud',RequestsController.putRequestById)
  * El delete by id fue realizado por Cecilia Mogro
  * 
 */
-router.delete('/:idSolicitud')
+router.delete('/:idSolicitud', RequestsController.deleteRequest)
 
 
 
