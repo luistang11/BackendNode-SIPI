@@ -24,3 +24,21 @@ export function deleteRequest (id)  {
     }
 }
 
+export function getRequestById(id){
+    try {
+        return RequestRepository.getRequestByIdRepo(id);
+    } catch (error) {
+        throw new Error(error.message)
+    }
+}
+
+export function putRequestById(id,solicitud){
+    try {
+        return RequestRepository.putRequestByIdRepo(id,solicitud);
+    } catch (error) {
+        throw new Error(error.message)
+    }
+}
+
+
+

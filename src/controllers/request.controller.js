@@ -40,3 +40,53 @@ export async function deleteRequest (req, res)  {
   }
 }
 
+export async function getRequestById(req, res){
+  const idSolicitud = req.params.idSolicitud
+  try {
+    const response = await RequestServices.getRequestById(idSolicitud);
+    if(response){
+      res.status(200).json({
+        request: response,
+        status: STATUS.SUCCESS,
+      });
+    }else{
+      res.status(404).json({
+        message: 'Solicitud no encontrada',
+        status: STATUS.FAIL,
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+      ststus: STATUS.FAIL
+    })
+  }
+}
+
+export async function putRequestById(req, res){
+  const idSolicitud = req.params.idSolicitud;
+  const solicitud = req.body;
+  try {
+
+    const solicitudResponse = await RequestServices.getRequestById(idSolicitud);
+
+    if(solicitudResponse){
+      const response = await RequestServices.putRequestById(idSolicitud,solicitud);
+      res.status(202).json({
+        request: response,
+        status: STATUS.SUCCESS,
+      });
+
+    }else{
+      res.status(404).json({
+        message: 'Solicitud no encontrada',
+        status: STATUS.FAIL,
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+      ststus: STATUS.FAIL
+    })
+  }
+}

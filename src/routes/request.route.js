@@ -10,19 +10,37 @@ const router=Router();
  * 
 */
 
-router.get('/',RequestsController.getProducts)
+router.get('/',RequestsController.getRequests)
 
-
-
-
-
-router.get('/:idSolicitud')
+/** 
+ * 
+ * El post fue realizado por Lucia Pereyra
+ * 
+*/
 router.post('/', RequestsController.createRequests)
 
-router.put('/:idSolicitud')
+/** 
+ * 
+ * El get by id fue realizado por Héctor Domínguez
+ * 
+*/
+router.get('/:idSolicitud',RequestsController.getRequestById)
+
+
+
+/** 
+ * 
+ * El put by id fue realizado por Héctor Domínguez
+ * 
+*/
+router.put('/:idSolicitud',RequestsController.putRequestById)
+
+/** 
+ * 
+ * El delete by id fue realizado por Cecilia Mogro
+ * 
+*/
 router.delete('/:idSolicitud')
-
-
 
 
 

@@ -36,3 +36,21 @@ export async function deleteRequestRepo (id) {
       console.log(error);
   }
 }
+
+export async function getRequestByIdRepo(id){
+  try {
+    let request = await Request.findById(id);
+    return request;
+  } catch (error) {
+    throw new Error(error.message)
+  }
+}
+
+export async function putRequestByIdRepo(id, solicitud){
+  try {
+    let request = await Request.findByIdAndUpdate(id,solicitud);
+    return request;
+  } catch (error) {
+    throw new Error(error.message)
+  }
+}
