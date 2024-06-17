@@ -31,12 +31,29 @@ export async function createRequests(req, res) {
 
 
 export async function deleteRequest (req, res)  {
+  let idSolicitud = req.params.idSolicitud;
   try {
-      await RequestServices.deleteRequest(req.params.idSolicitud)
-      res.status(200).json("La solicitud se eliminó con éxito");
+    const solicitudResp = await RequestServices.getRequestById(idSolicitud);
+   if (solicitudResp){
+    let resp = await RequestServices.deleteRequest(idSolicitud);
+    res.status(200).json({ 
+      request: resp, 
+      mensaje: "La solicitud se eliminó con éxito",
+      status:  STATUS.SUCCESS
+    });
+
+   }  else {
+        res.status(404).json({
+          mensaje: "Solicitud no encontrada",
+          status:  STATUS.FAIL
+        })
+   }
+   
   } catch (error) {
-      console.log(error);
-      res.status(500).send("Hubo un error al eliminar la solicitud.")
+    res.status(500).json({
+      error: error.message,
+      ststus: STATUS.FAIL
+    })
   }
 }
 

@@ -20,7 +20,7 @@ export function deleteRequest (id)  {
     try {
          RequestRepository.deleteRequestRepo(id)
     }catch (error) {
-        console.log(error);
+        throw new Error(error.message);
     }
 }
 
