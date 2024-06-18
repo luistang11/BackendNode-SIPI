@@ -1,5 +1,5 @@
 import conectarDB from "../config/db.js";
-import {Request} from './Request.js';
+import { Request } from './Request.js';
 
 conectarDB();
 
@@ -19,21 +19,21 @@ export async function createRequestRepo(request) {
     let newRequest = new Request(request);
     await newRequest.save();
   } catch (error) {
-    console.log(error)
+    throw new Error(error.message);
   }
 }
 
 
-  export async function deleteRequestRepo(id) {
-    try {
-     return await Request.findOneAndDelete({ _id: id });
-    } catch (error) {
-      throw new Error(error.message);
-    }
+export async function deleteRequestRepo(id) {
+  try {
+    return await Request.findOneAndDelete({ _id: id });
+  } catch (error) {
+    throw new Error(error.message);
   }
-  
+}
 
-export async function getRequestByIdRepo(id){
+
+export async function getRequestByIdRepo(id) {
   try {
     let request = await Request.findById(id);
     return request;
@@ -42,9 +42,9 @@ export async function getRequestByIdRepo(id){
   }
 }
 
-export async function putRequestByIdRepo(id, solicitud){
+export async function putRequestByIdRepo(id, solicitud) {
   try {
-    let request = await Request.findByIdAndUpdate(id,solicitud);
+    let request = await Request.findByIdAndUpdate(id, solicitud);
     return request;
   } catch (error) {
     throw new Error(error.message)
