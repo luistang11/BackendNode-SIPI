@@ -10,7 +10,7 @@ export function getRequests() {
 
 export function createRequest(request) {
     try {
-        RequestRepository.createRequestRepo(request);
+        return RequestRepository.createRequestRepo(request);
     } catch (error) {
         throw new Error(error.message);
     }

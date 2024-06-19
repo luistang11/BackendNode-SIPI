@@ -1,5 +1,5 @@
 # **API SIPI 💻**
-## _API del Sistema Integral de Prestamas e Instalación de Programas_
+## _API del Sistema Integral de Prestamos e Instalación de Programas_
 
 ## Endpoints desarrollados 🚀
 
