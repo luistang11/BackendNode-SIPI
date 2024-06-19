@@ -12,19 +12,19 @@ export function createRequest(request) {
     try {
         RequestRepository.createRequestRepo(request);
     } catch (error) {
-        console.log(error);
-    }
-}
-
-export function deleteRequest (id)  {
-    try {
-         RequestRepository.deleteRequestRepo(id)
-    }catch (error) {
         throw new Error(error.message);
     }
 }
 
-export function getRequestById(id){
+export function deleteRequest(id) {
+    try {
+        RequestRepository.deleteRequestRepo(id)
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+export function getRequestById(id) {
     try {
         return RequestRepository.getRequestByIdRepo(id);
     } catch (error) {
@@ -32,9 +32,9 @@ export function getRequestById(id){
     }
 }
 
-export function putRequestById(id,solicitud){
+export function putRequestById(id, solicitud) {
     try {
-        return RequestRepository.putRequestByIdRepo(id,solicitud);
+        return RequestRepository.putRequestByIdRepo(id, solicitud);
     } catch (error) {
         throw new Error(error.message)
     }
