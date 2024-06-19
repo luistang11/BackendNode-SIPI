@@ -17,7 +17,7 @@ export async function getRequestRepo() {
 export async function createRequestRepo(request) {
   try {
     let newRequest = new Request(request);
-    await newRequest.save();
+    return await newRequest.save();
   } catch (error) {
     throw new Error(error.message);
   }
