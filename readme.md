@@ -23,6 +23,7 @@
 
 Para entornos no productivos
 ```sh
+npm install
 npm run dev
 ```
 

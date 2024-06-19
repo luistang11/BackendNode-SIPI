@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 
-dotenv.config({path:'./.env.example'});
+dotenv.config({path:'./.env'});
 
 import requestRouter from "./src/routes/request.route.js"
 
