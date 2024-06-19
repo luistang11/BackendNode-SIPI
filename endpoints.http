@@ -14,10 +14,10 @@ Content-Type: application/json
 GET http://localhost:8081/solicitudes
 
 ### Get Request by Id
-GET http://localhost:8081/solicitudes/6670983ee27baba0bae9479d
+GET http://localhost:8081/solicitudes/6670a8cc69ab8083f53cc86d
 
 ### Update Request by Id
-PUT http://localhost:8081/solicitudes/6670983ee27baba0bae9479d
+PUT http://localhost:8081/solicitudes/6670a8cc69ab8083f53cc86d
 Content-Type: application/json
 
 {
@@ -29,4 +29,4 @@ Content-Type: application/json
 }
 
 ### Delete Request by Id
-DELETE http://localhost:8081/solicitudes/6670983ee27baba0bae9479d
+DELETE http://localhost:8081/solicitudes/6670a8cc69ab8083f53cc86d
